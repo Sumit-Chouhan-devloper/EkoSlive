@@ -1,38 +1,543 @@
-.App {
-  text-align: center;
+/*===================================== utilits classes ============================*/
+.f_style_itelic {
+  font-style: italic;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.opecity_69 {
+  opacity: 0.69;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.c_pointer {
+  cursor: pointer;
+}
+.z_index_100 {
+  z-index: 100;
+}
+.w_398 {
+  width: 398px;
+}
+.ws_nowrap {
+  white-space: nowrap;
+}
+.text_capit {
+  text-transform: capitalize;
+}
+.mt_-2 {
+  margin-top: -2px;
+}
+.mt_-3 {
+  margin-top: -3px;
+}
+.mw_1920 {
+  max-width: 1920px;
+}
+.mw_722{max-width: 722px;}
+.z_1 {
+  z-index: 1 !important;
+}
+.mt_-4 {
+  margin-top: -4px;
+}
+.mt_-20 {
+  margin-top: -20px;
+}
+.orange_circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 216.825px;
+  background: rgba(255, 184, 0, 0.74);
+  filter: blur(200px);
+}
+.big_orange_circle {
+  border-radius: 244.37px;
+  background: #f60;
+  filter: blur(200px);
+  width: 244.37px;
+  height: 244.37px;
+}
+.plan_orange_circle {
+  left: -25%;
+  top: -16%;
+}
+.lh_180 {
+  line-height: 180%;
+}
+.lh_150 {
+  line-height: 150%;
+}
+.sections_heading {
+  color: var(--color-white);
+  font-size: var(--fs-2xl);
+  font-family: "Raleway";
+  font-weight: 500;
+}
+.py_14 {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.blur_bg {
+  background: rgba(255, 255, 255, 0.1);
+}
+.mt_-18 {
+  margin-top: -18px;
+}
+.btn_h {
+  color: #fff;
+  padding: 14px 32px;
+  border: 3px solid #fb6600;
+  background-image: -webkit-linear-gradient(
+    30deg,
+    #fb6600 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(30deg, #fb6600 50%, transparent 50%);
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.btn_h:hover {
+  background-position: 100%;
+  color: #fb6600;
+  box-shadow: 0px 3px 49px 0px rgba(255, 102, 0, 0.5);
+}
+.rotate_animation {
+  animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
   }
 }
+.scale_animation {
+  animation: scale 3s linear infinite;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+/*======================================================= utilitys end =============================*/
+/*======================================================= preloader ================================*/
+.animation_preloader {
+  animation: loder 3s linear 1;
+}
+@keyframes loder {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+/*====================================================== preloader =================================*/
+/*======================================================= backtotop ================================*/
+.backtotop_icon {
+  right: 5%;
+  bottom: 5%;
+  background: var(
+    --hotizontal,
+    linear-gradient(90deg, #a9390d 0%, #c5690d 100%)
+  );
+  height: 35px;
+  width: 35px;
+  padding-bottom: 3px;
+  z-index: 100 !important;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: backto 2s linear infinite;
+}
+body {
+  scroll-behavior: smooth;
+}
+@keyframes backto {
+  0% {
+  }
+  50% {
+    transform: translatey(-8px) scale(1.05);
+  }
+}
+/*============================================ backtotop end ================================*/
+/*================================================ nav start ================================*/
+.nav_input {
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 29px;
+}
+.nav_bg {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6.5px);
+}
+.nav_input input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.nav_sm_search {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+.nav_input input::placeholder {
+  color: var(--color-white);
+  font-family: "Raleway";
+  font-style: italic;
+}
+.nav ul li a {
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  font-family: "Raleway";
+  font-weight: 400;
+  opacity: 0.69;
+  position: relative;
+  transition: all 300ms linear;
+}
+.nav ul li a::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0%;
+  left: 50%;
+  transition: all 300ms linear;
+  background-color: var(--bg-orange);
+  bottom: -3px;
+}
+.nav ul li a:hover::before {
+  width: 100%;
+  left: 0;
+}
+.nav ul li a:hover {
+  opacity: 1;
+}
+.nav_login_btn {
+  padding: 14px 32px;
+  border: 2px solid var(--color-white);
+  background-color: transparent;
+  transition: all 300ms linear;
+}
+.nav_login_btn:hover {
+  border: 2px solid transparent;
+  background-color: var(--bg-orange);
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav_singup_btn {
+  padding: 14px 32px;
+  border: 2px solid transparent;
+  background-color: var(--bg-orange);
+  transition: all 300ms linear;
+  position: relative;
+}
+.nav_singup_btn:hover {
+  border: 2px solid var(--color-white);
+  background-color: transparent;
+}
+.sm_nav {
+  position: fixed;
+  z-index: 99 !important;
+  top: 0;
+  left: -100%;
+  height: 100vh !important;
+  width: 100%;
+  background-color: var(--bg-black);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  transition: all 300ms linear !important;
+}
+/*====================================================== nav end ==============================*/
+/*================================================== hero start =============================*/
+.hero_bg {
+  background-image: url(./assets/images/wabp/hero_bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/*================================================= hero end ============================*/
+/*=============================================== what section start =====================*/
+.what_circle_1 {
+  top: 20%;
+  left: 40%;
+  transform: translate(-50% -50%);
+}
+.what_circle_2 {
+  top: 10%;
+  left: 50%;
+  transform: translate(-50% -50%);
+}
+.what_circle_3 {
+  top: 10%;
+  left: 10%;
+}
+/*================================================= what end ===========================*/
+/*=============================================== featured start =======================*/
+.featured_card {
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(9.5px);
+  padding: 40px 18px 0 18px;
+}
+.featured_card .icon {
+  height: 64px;
+  width: 64px;
+  background-color: rgba(255, 238, 227, 0.17);
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.featured_card h3 {
+  transition: all 300ms linear;
+}
+.featured_card .icon svg path {
+  transition: all 300ms linear;
+}
+.featured_card:hover h3 {
+  color: var(--color-orange);
+}
+.featured_card:hover .icon svg path {
+  fill: var(--color-orange);
+}
+.feature_bg {
+  background-image: url(./assets/images/wabp/featured_bg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+/*===================================== suported start ======================*/
+.suport_orange_backdrop {
+  left: -5%;
+  top: 10%;
+}
+.suport_1_circle_img {
+  left: 16%;
+  top: 2%;
+}
+.suport_2_circle_img {
+  right: 21%;
+  top: 15%;
+}
+.suport_3_circle_img {
+  bottom: -5%;
+  left: 35%;
+}
+/*============================================ suported end ===================*/
+/*============================================ intergration start ======================*/
+.inter_card {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(9.5px);
+  transition: all 300ms linear;
+}
+.inter_card h3 {
+  transition: all 200ms linear;
+}
+.inter_card:hover {
+  transform: translateY(-30px);
+}
+.inter_card:hover h3 {
+  color: var(--color-orange);
+}
+.splide__pagination__page.is-active {
+  background-color: #f60 !important;
+}
+.splide__pagination {
+  transform: translatey(55px) !important;
+}
+/*================================================ intergration end =============================*/
+/*============================================== lease start =====================================*/
+.lease_bg {
+  background-image: url(./assets/images/svg/leasy_sm_bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.leasy_img {
+  width: 100% !important;
+  position: unset;
+}
+.moon_img {
+  z-index: 0 !important;
+  background: transparent;
+}
+/*====================================================== leasy end ==============================*/
+/*=================================================== plans start =============================*/
+.plan_bg {
+  background-image: url(./assets/images/wabp/plans_earth.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.plans_h:hover ul {
+  background-color: #321400ab;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.plans_h ul {
+  transition: all 200ms linear;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.plans_h:hover .h_btn {
+  background-color: var(--bg-orange);
+}
+.plans_h .h_btn {
+  transition: all 300ms linear;
+}
+.plans_h:hover button {
+  opacity: 1;
+}
+.plans_h button {
+  transition: all 300ms linear;
+}
+.h_100 {
+  height: 100%;
+}
+/*================================================== plans end ============================*/
+/*=================================================== video demo  start===========================*/
+.demo_video {
+  max-width: 1440px;
+}
+.video_on_content {
+  top: 25%;
+  left: 42%;
+  transform: translate(-50% -50%);
+}
+.video_heading {
+  transform: translatex(-40%);
+  font-size: 14px;
+}
+/*============================================== video demo end ==============================*/
+/*============================================== footer start =============================== */
+.footer ul li {
+  padding-top: 16px;
+}
+.footer ul li a {
+  color: white;
+  font-size: var(--fs-xsm);
+  font-family: "Manrope";
+  font-weight: 400;
+  opacity: 0.8;
+  transition: all 200ms linear;
+}
+.footer ul li a:hover {
+  opacity: 1;
+}
+.f_icon {
+  height: 34px;
+  width: 34px;
+  border-radius: 100px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms linear;
+}
+.f_icon svg path {
+  transition: all 300ms linear;
+}
+.f_icon:hover svg path {
+  fill: var(--color-orange);
+}
+.f_icon:hover {
+  border: 2px solid #f60;
+  box-shadow: 0px 0px 10px 0px rgba(255, 102, 0, 0.5);
+}
+.copyright_line {
+  border-top: 1px solid rgba(255, 255, 255, 0.495);
+}
+/*============================================ footer end ===================*/
+/*===========================================  media screen 576 ==================*/
+@media (min-width: 576px) {
+  .video_on_content {
+    top: 42%;
+    left: 50%;
+    transform: translate(-50% -50%);
   }
-  to {
-    transform: rotate(360deg);
+}
+/*=========================================== media screen =====================*/
+@media (min-width: 768px) {
+  .video_heading {
+    font-size: 30px;
+  }
+}
+/* ========================================media screen 992 ==================== */
+@media (min-width: 992px) {
+  .suport_2_circle_img {
+    right: 9%;
+    top: 15%;
+  }
+  .position_lg_absolute {
+    position: absolute;
+  }
+  .mw_lg_1100 {
+    max-width: 1100px;
+  }
+  .leasy_img {
+    width: 46% !important;
+    top: 0%;
+    transform: translateY(-25%);
+  }
+  .video_heading {
+    font-size: 44px;
+  }
+  .lease_bg {
+    background-image: url(./assets/images/svg/moon_img.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+/*================================================ ṃedia screen 1200 ========================*/
+@media (min-width: 1200px) {
+  .vh_xl_100 {
+    height: 100vh;
+  }
+  .comunity_img {
+    width: 43%;
+    top: 54%;
+    transform: translatey(-50%);
+  }
+  .position_xl_absolute {
+    position: absolute;
+  }
+  .h_100 {
+    height: unset;
+  }
+}
+@media (min-width: 1400px) {
+  .leasy_img {
+    width: 39% !important;
+    top: 0%;
+    transform: translateY(-25%);
+  }
+  .orange_circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 216.825px;
+    background: rgba(255, 184, 0, 0.74);
+    filter: blur(200px);
+  }
+  .what_circle_1 {
+    top: 20%;
+    left: -10%;
+  }
+  .what_circle_2 {
+    left: -10%;
+    top: 20%;
+  }
+  .what_circle_3 {
+    top: 20%;
+    left: -10%;
   }
 }

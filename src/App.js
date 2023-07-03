@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import "@splidejs/react-splide/css/skyblue";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MyHero from "./components/MyHero";
+import WhatEco from "./components/WhatEco";
+import About from "./components/About";
+import Feature from "./components/Feature";
+import Suported from "./components/Suported";
+import Intergration from "./components/Intergration";
+import Comunity from "./components/Comunity";
+import Plans from "./components/Plans";
+import MyFooter from "./components/MyFooter";
+import Lease from "./components/Lease";
+import BackToTop from "./components/BackToTop";
+import DemoVideo from "./components/DemoVideo";
+import PreLoader from "./components/PreLoader";
+import "aos/dist/aos.css"; 
+import AOS from "aos";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      duration:3000,
+    });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <PreLoader/>
+    <BackToTop/>
+      <MyHero />
+      <WhatEco />
+      <About />
+      <Feature />
+      <Suported/>
+      <Intergration/>
+      <Lease/>
+      <Comunity/>
+      <Plans/>
+      <DemoVideo/>
+      <MyFooter/>
+    </>
   );
 }
 
