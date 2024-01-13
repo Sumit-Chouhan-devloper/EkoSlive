@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import MyNav from "./MyNav";
 import { Col, Container, Row } from "react-bootstrap";
-
+import gsap from 'gsap';
 const MyHero = () => {
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    // GSAP animations can be defined and triggered in the useEffect hook
+    const element = elementRef.current;
+
+    // Create a GSAP animation
+    gsap.to(element, {
+      x: -100,
+      duration: 1,
+      yoyo:true,
+      repeat:-1,
+    });
+  }, []);
   return (
     <>
       <header className="hero_bg d-flex flex-column vh_xl_100 position-relative" id="hero">
         <MyNav/>
         <Container className="flex-grow-1 h-100 pt-5 pt-xl-0 mt-5 mt-xl-0">
           <Row className="justify-content-between align-items-end h-100 pt-5 pt-xl-0 mt-5 mt-xl-0">
-            <Col lg={8} className="pt-5 mt-5 mt-xl-0 pt-xl-0 pb-lg-5">
+            <Col lg={8} className="pt-5 mt-5 mt-xl-0 pt-xl-0 pb-lg-5" ref={elementRef}>
               <div className="pt-sm-5 pb-3 mt-sm-5">
                 <h1 className="color_white ff_railway fw-normel fs_3xl mb-0 text_capit pb-1 text-center text-lg-start mw_722 pt-md-5 mt-5 pt-lg-0 mt-lg-0">
                   Your ultimate <span className="color_orange">cloud<br/></span>

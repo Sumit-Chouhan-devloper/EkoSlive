@@ -28,7 +28,7 @@ function App() {
     <>
     <PreLoader/>
     <BackToTop/>
-      <MyHero />
+      <MyHero /> 
       <WhatEco />
       <About />
       <Feature />
