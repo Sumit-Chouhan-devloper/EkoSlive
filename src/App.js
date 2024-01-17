@@ -41,6 +41,7 @@ function App() {
       <MyFooter/>
     </>
   );
+  
 }
 
 export default App;
